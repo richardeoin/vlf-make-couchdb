@@ -3,22 +3,34 @@
 /* Generates view functions for our CouchDB */
 
 exports = module.exports = function() {
+	/* ======== Decode Function ======== */
+
+	function get_decode_function() {
+	
+	}
+
 	/* ======== Main ======== */
 
 	return {
 		left: {
-			map: function (doc) {
-				if (doc.left && doc.left.value) {
+			map: (function (doc) {
+				if (doc.bin) { /* If the document is still in binary format */
+					doc = decode(doc); /* Decode it */
+				}
+				if (doc.time && doc.left && doc.left.value) {
 					emit(doc.time, doc.left.value);
 				}
-			}
+			}).toString().replace(/decode/g, get_decode_function())
 		},
 		right: {
-			map: function (doc) {
+			map: (function (doc) {
+				if (doc.bin) { /* If the document is still in binary format */
+					doc = decode(doc); /* Decode it */
+				}
 				if (doc.right && doc.right.value) {
 					emit(doc.time, doc.right.value);
 				}
-			}
+			}).toString().replace(/decode/g, get_decode_function())
 		},
 		battery: {
 			map: function (doc) {
