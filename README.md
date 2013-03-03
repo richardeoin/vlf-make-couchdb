@@ -10,6 +10,14 @@ npm install
 
 to grab the dependancies.
 
+## Usage ##
+
+Like this
+
+```
+node make_design.js --ddoc vlf --database vlf_fft --host localhost --port 5984
+```
+
 ## LICENSE ###
 
 MIT

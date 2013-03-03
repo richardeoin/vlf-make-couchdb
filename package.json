@@ -6,7 +6,8 @@
 	"main": "make_design.js",
 	"dependencies": {
 		"optimist": "0.x.x",
-		"colors": "0.x.x"
+		"colors": "0.x.x",
+		"request":  "2.14.x"
 	},
 	"license": "MIT",
 	"engine": "node >= 0.9.4-pre"
