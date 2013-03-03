@@ -1,0 +1,13 @@
+{
+	"name": "vlf-make-couchdb",
+	"version": "0.0.1",
+	"description": "Builds a CouchDB design document for the vlf app",
+	"private": true,
+	"main": "make_design.js",
+	"dependencies": {
+		"optimist": "0.x.x",
+		"colors": "0.x.x",
+	},
+	"license": "MIT",
+	"engine": "node >= 0.9.4-pre"
+}
