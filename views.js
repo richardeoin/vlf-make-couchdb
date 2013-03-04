@@ -65,7 +65,7 @@ exports = module.exports = function() {
 						var pin_voltage = (adc_value*1.8)/1024;
 						/* Compensate for the resistor divider */
 						var battery_voltage = pin_voltage*11;
-						/* Output to 3 significant figures */
+						/* Output to 3 decimal places */
 						emit(doc.time, Math.round(pin_voltage*1000)/1000);
 					}
 				}
