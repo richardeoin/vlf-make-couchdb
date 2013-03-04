@@ -3,59 +3,73 @@
 /* Generates view functions for our CouchDB */
 
 exports = module.exports = function() {
-	/* ======== Decode Function ======== */
-
-	/**
-	 * Returns a function that decodes the 'bin' field in a document into a human readable document.
-	 */
-	function get_decode_function() {
-		/* Return a stringified function */
-		return (function (doc) {
-			return decode_base64(doc.bin);
-		}).toString().replace(/decode_base64/g, require('./base64').toString());
-	}
 
 	/* ======== Main ======== */
 
 	return {
-		bintest: {
-			map: (function (doc) {
-				if (doc.bin) {
-					emit(doc._id, decode(doc));
-				}
-			}).toString().replace(/decode/g, get_decode_function())
-		},
 		left: {
-			map: (function (doc) {
-				if (doc.bin) { /* If the document is still in binary format */
-					doc = decode(doc); /* Decode it */
+			map: function (doc) {
+				/* If this is a record for the left em channel */
+				if (doc.left && doc.time) {
+					/* If the time is still in hex format from a direct upload */
+					if (typeof doc.time === 'string') {
+						/*
+						 * Parse the time to a number. Note the loss of precision in representing 64 bit time
+						 * in javascript. Will become a problem around the year 300 million.
+						 */
+						doc.time = parseInt(doc.time, 16);
+					}
+					/* If everything is as we expect */
+					if (typeof doc.time === 'number' && doc.left.value && typeof doc.left.value === 'number') {
+						emit(doc.time, doc.left.value);
+					}
 				}
-				if (doc.time && doc.left && doc.left.value) {
-					emit(doc.time, doc.left.value);
-				}
-			}).toString().replace(/decode/g, get_decode_function())
+			}
 		},
 		right: {
-			map: (function (doc) {
-				if (doc.bin) { /* If the document is still in binary format */
-					doc = decode(doc); /* Decode it */
+			map: function (doc) {
+				/* If this is a record for the right em channel */
+				if (doc.right && doc.time) {
+					/* If the time is still in hex format from a direct upload */
+					if (typeof doc.time === 'string') {
+						/*
+						 * Parse the time to a number. Note the loss of precision in representing 64 bit time
+						 * in javascript. Will become a problem around the year 300 million.
+						 */
+						doc.time = parseInt(doc.time, 16);
+					}
+					/* If everything is as we expect */
+					if (typeof doc.time === 'number' && doc.right.value && typeof doc.right.value === 'number') {
+						emit(doc.time, doc.right.value);
+					}
 				}
-				if (doc.right && doc.right.value) {
-					emit(doc.time, doc.right.value);
-				}
-			}).toString().replace(/decode/g, get_decode_function())
+			}
 		},
 		battery: {
-			map: (function (doc) {
-				if (doc.bin) { /* If the document is still in binary format */
-					doc = decode(doc); /* Decode it */
+			map: function (doc) {
+				/* If this is a record for the battery */
+				if (doc.battery && doc.time) {
+					/* If the time is still in hex format from a direct upload */
+					if (typeof doc.time === 'string') {
+						/*
+						 * Parse the time to a number. Note the loss of precision in representing 64 bit time
+						 * in javascript. Will become a problem around the year 300 million.
+						 */
+						doc.time = parseInt(doc.time, 16);
+					}
+					/* If everything is as we expect */
+					if (typeof doc.time === 'number' && doc.battery.value && typeof doc.battery.value === 'number') {
+						/* Compensate for the averaging */
+						var adc_value = doc.battery.value/10;
+						/* Determine the voltage at the adc pin, given a 1.8V ref and a 10-bit adc */
+						var pin_voltage = (adc_value*1.8)/1024;
+						/* Compensate for the resistor divider */
+						var battery_voltage = pin_voltage*11;
+						/* Output to 3 significant figures */
+						emit(doc.time, Math.round(pin_voltage*1000)/1000);
+					}
 				}
-				if (doc.battery && doc.battery.value) {
-					var adc_value = doc.battery.value/10;
-					var pin_voltage = (adc_value*1.8)/1024;
-					emit(doc.time, Math.round(pin_voltage*11*1000)/1000);
-				}
-			}).toString().replace(/decode/g, get_decode_function())
+			}
 		}
 	};
 }();
