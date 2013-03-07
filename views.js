@@ -12,16 +12,19 @@ exports = module.exports = function() {
 				/* If this is a record for the left em channel */
 				if (doc.left && doc.time) {
 					/* If the time is still in hex format from a direct upload */
+					var time;
 					if (typeof doc.time === 'string') {
 						/*
 						 * Parse the time to a number. Note the loss of precision in representing 64 bit time
 						 * in javascript. Will become a problem around the year 300 million.
 						 */
-						doc.time = parseInt(doc.time, 16);
+						time = parseInt(doc.time, 16);
+					} else {
+						time = doc.time;
 					}
 					/* If everything is as we expect */
-					if (typeof doc.time === 'number' && doc.left.value && typeof doc.left.value === 'number') {
-						emit(doc.time, doc.left.value);
+					if (typeof time === 'number' && doc.left.value && typeof doc.left.value === 'number') {
+						emit(time, doc.left.value);
 					}
 				}
 			}
@@ -31,16 +34,20 @@ exports = module.exports = function() {
 				/* If this is a record for the right em channel */
 				if (doc.right && doc.time) {
 					/* If the time is still in hex format from a direct upload */
+					var time;
 					if (typeof doc.time === 'string') {
 						/*
 						 * Parse the time to a number. Note the loss of precision in representing 64 bit time
 						 * in javascript. Will become a problem around the year 300 million.
 						 */
-						doc.time = parseInt(doc.time, 16);
+						time = parseInt(doc.time, 16);
+					}
+					else {
+						time = doc.time;
 					}
 					/* If everything is as we expect */
-					if (typeof doc.time === 'number' && doc.right.value && typeof doc.right.value === 'number') {
-						emit(doc.time, doc.right.value);
+					if (typeof time === 'number' && doc.right.value && typeof doc.right.value === 'number') {
+						emit(time, doc.right.value);
 					}
 				}
 			}
@@ -50,15 +57,18 @@ exports = module.exports = function() {
 				/* If this is a record for the battery */
 				if (doc.battery && doc.time) {
 					/* If the time is still in hex format from a direct upload */
+					var time;
 					if (typeof doc.time === 'string') {
 						/*
 						 * Parse the time to a number. Note the loss of precision in representing 64 bit time
 						 * in javascript. Will become a problem around the year 300 million.
 						 */
-						doc.time = parseInt(doc.time, 16);
+						time = parseInt(doc.time, 16);
+					} else {
+						time = doc.time;
 					}
 					/* If everything is as we expect */
-					if (typeof doc.time === 'number' && doc.battery.value && typeof doc.battery.value === 'number') {
+					if (typeof time === 'number' && doc.battery.value && typeof doc.battery.value === 'number') {
 						/* Compensate for the averaging */
 						var adc_value = doc.battery.value/10;
 						/* Determine the voltage at the adc pin, given a 1.8V ref and a 10-bit adc */
@@ -66,7 +76,7 @@ exports = module.exports = function() {
 						/* Compensate for the resistor divider */
 						var battery_voltage = pin_voltage*11;
 						/* Output to 3 decimal places */
-						emit(doc.time, Math.round(pin_voltage*1000)/1000);
+						emit(time, Math.round(pin_voltage*1000)/1000);
 					}
 				}
 			}
