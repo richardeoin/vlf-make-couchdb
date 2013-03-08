@@ -76,7 +76,7 @@ exports = module.exports = function() {
 						/* Compensate for the resistor divider */
 						var battery_voltage = pin_voltage*11;
 						/* Output to 3 decimal places */
-						emit(time, Math.round(pin_voltage*1000)/1000);
+						emit(time, Math.round(battery_voltage*1000)/1000);
 					}
 				}
 			}
