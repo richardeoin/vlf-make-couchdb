@@ -55,7 +55,7 @@ exports = module.exports = function() {
 			var row;
 
 			if (row = getRow()) { /* If we can get a row */
-				var coords = coords_function(row, req, px_per_second, px_per_div);
+				var coords = coords_function(row, req, px_per_second, px_per_y_div);
 
 				/* Make sure the y-coordinate is within bounds */
 				coords.y = (coords.y >= 0) ? coords.y : 0;
