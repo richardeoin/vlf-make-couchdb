@@ -39,16 +39,14 @@ exports = module.exports = function() {
 		});
 		send("<TEMPLATE1>");
 
-		var origin = {
-			x: 100,
-			y: 310
-		};
 		var size = {
 			x: 835,
 			y: 285
 		};
-		var px_per_second = 0.009664;
-		var px_per_div = 57;
+		var px_per_x_div = 69.58;
+		var px_per_y_div = 57;
+
+		var px_per_second = px_per_x_div/7200; /* Each divison is 2 hours */
 
 		/**
 	 	* Gets a single pair of coordinates that are within the graph.
@@ -78,9 +76,9 @@ exports = module.exports = function() {
 		if (coords = get_coords()) { /* Get the first row */
 
 			var string = 'M'; /* Move to absolute position */
-			string += (origin.x + coords.x).toFixed(1);
+			string += coords.x.toFixed(1);
 			string += ' ';
-			string += (origin.y - coords.y).toFixed(1);
+			string += coords.y.toFixed(1);
 			string += ' ';
 			string += 'l' /* Draw line to relative position */
 			send(string);
@@ -91,8 +89,8 @@ exports = module.exports = function() {
 				/* Get the relative position of this point to 1 dp */
 				var dx = round_to_one(this_coords.x - coords.x);
 				coords.x += dx;
-				var dy = round_to_one(coords.y - this_coords.y);
-				coords.y -= dy;
+				var dy = round_to_one(this_coords.y - coords.y);
+				coords.y += dy;
 
 				/* Move by this relative position */
 				send(dx.toString(10) + ' ' + dy.toString(10) + ' ');
