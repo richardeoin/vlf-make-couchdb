@@ -180,7 +180,7 @@ exports = module.exports = function() {
 		plot_em_today: get_today_function('plot_em'),
 		plot_battery: get_plot_function('svg/plot_battery_template.svg', battery_get_coords),
 		plot_battery_today: get_today_function('plot_battery'),
-		plot_rx_power: get_plot_function('svg/plot_rx_power.svg', rx_power_get_coords),
+		plot_rx_power: get_plot_function('svg/plot_rx_power_template.svg', rx_power_get_coords),
 		plot_rx_power_today: get_today_function('plot_rx_power')
 	};
 }();
