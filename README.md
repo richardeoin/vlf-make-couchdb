@@ -8,7 +8,7 @@ If you have [npm](https://npmjs.org/) installed, clone the repo and run
 npm install
 ```
 
-to grab the dependancies.
+to grab the dependencies.
 
 ## Usage ##
 
