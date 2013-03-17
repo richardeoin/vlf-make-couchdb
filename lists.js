@@ -12,19 +12,28 @@ exports = module.exports = function() {
 	/**
 	 * A function for converting energy measurement values into graph coordinates.
 	 */
-	var em_get_coords = function(row, req, px_per_second, px_per_div) {
+	var em_get_coords = function(row, req, px_per_second) {
 		return {
 			x: (row.key-req.query.startkey) * px_per_second,
-			y: ((Math.log(row.value) / Math.log(10))-3) * px_per_div
+			y: ((Math.log(row.value) / Math.log(10))-3) * 57
 		};
 	}
 	/**
  	* A function for converting battery voltage values into graph coordinates.
  	*/
-	var battery_get_coords = function(row, req, px_per_second, px_per_div) {
+	var battery_get_coords = function(row, req, px_per_second) {
 		return {
 			x: (row.key-req.query.startkey) * px_per_second,
-			y: row.value * px_per_div
+			y: row.value * 57
+		};
+	}
+	/**
+	 * A function for converting rx power values into graph coordinates.
+	 */
+	var rx_power_get_coords = function(row, req, px_per_second) {
+		return {
+			x: (row.key-req.query.startkey) * px_per_second,
+			y: (row.value+100) * 3.17
 		};
 	}
 	/**
@@ -43,9 +52,8 @@ exports = module.exports = function() {
 			x: 835,
 			y: 285
 		};
-		var px_per_x_div = 69.58;
-		var px_per_y_div = 57;
 
+		var px_per_x_div = 69.58;
 		var px_per_second = px_per_x_div/7200; /* Each divison is 2 hours */
 
 		/**
@@ -55,7 +63,7 @@ exports = module.exports = function() {
 			var row;
 
 			if (row = getRow()) { /* If we can get a row */
-				var coords = coords_function(row, req, px_per_second, px_per_y_div);
+				var coords = coords_function(row, req, px_per_second);
 
 				/* Make sure the y-coordinate is within bounds */
 				coords.y = (coords.y >= 0) ? coords.y : 0;
@@ -171,6 +179,8 @@ exports = module.exports = function() {
 		plot_em: get_plot_function('svg/plot_em_template.svg', em_get_coords),
 		plot_em_today: get_today_function('plot_em'),
 		plot_battery: get_plot_function('svg/plot_battery_template.svg', battery_get_coords),
-		plot_battery_today: get_today_function('plot_battery')
+		plot_battery_today: get_today_function('plot_battery'),
+		plot_rx_power: get_plot_function('svg/plot_rx_power.svg', rx_power_get_coords),
+		plot_rx_power_today: get_today_function('plot_rx_power')
 	};
 }();
