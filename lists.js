@@ -90,7 +90,7 @@ exports = module.exports = function() {
 
 				while(this_coords = get_coords()) {
 					/* If the next coordinates are from a different line */
-					if (this_coords.x - coords.x > 5) { break; }
+					if (this_coords.x - coords.x > size.x*0.05) { break; }
 
 					/* Get the relative position of this point to 1 dp */
 					var dx = round_to_one(this_coords.x - coords.x);
