@@ -80,29 +80,28 @@ exports = module.exports = function() {
 			return Math.round(val*10)/10;
 		}
 
-		var coords;
-		if (coords = get_coords()) { /* Get the first row */
+		var this_coords, coords;
+		if (this_coords = get_coords()) { /* Get the first row */
+			do {
+				coords = this_coords;
 
-			var string = 'M'; /* Move to absolute position */
-			string += coords.x.toFixed(1);
-			string += ' ';
-			string += coords.y.toFixed(1);
-			string += ' ';
-			string += 'l' /* Draw line to relative position */
-			send(string);
+				/* Send a absolute position followed by the start of a relative position line */
+				send(['M', coords.x.toFixed(1), ' ', coords.y.toFixed(1), ' l'].join(''));
 
-			var this_coords;
-			while (this_coords = get_coords()) {
+				while(this_coords = get_coords()) {
+					/* If the next coordinates are from a different line */
+					if (this_coords.x - coords.x > 5) { break; }
 
-				/* Get the relative position of this point to 1 dp */
-				var dx = round_to_one(this_coords.x - coords.x);
-				coords.x += dx;
-				var dy = round_to_one(this_coords.y - coords.y);
-				coords.y += dy;
+					/* Get the relative position of this point to 1 dp */
+					var dx = round_to_one(this_coords.x - coords.x);
+					coords.x += dx;
+					var dy = round_to_one(this_coords.y - coords.y);
+					coords.y += dy;
 
-				/* Move by this relative position */
-				send(dx.toString(10) + ' ' + dy.toString(10) + ' ');
-			}
+					/* Move by this relative position */
+					send([dx.toString(10), ' ', dy.toString(10), ' '].join(''));
+				}
+			} while (this_coords);
 
 			send("<TEMPLATE2>");
 			send("none"); /* We don't display the no data found message */
