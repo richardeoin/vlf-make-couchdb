@@ -19,13 +19,15 @@ node make_design.js --ddoc vlf --database vlf_fft --host localhost --port 5984
 ```
 
 SVG templates for the graphs need to be generated too, although [default](svg/plot_em_template.svg) [ones](svg/plot_battery_template.svg) already exist.
-You'll need [ruby](http://www.ruby-lang.org/) installed, then run
+These are generated using [svg-plot-gen](https://github.com/richardeoin/svg-plot-gen), so you'll need to get that installed first.
+Then you can `cd svg/` and run
 
 ```
-ruby svg/gen/gen.rb --help
+./make_em_template.sh
+./make_battery_template.sh
 ```
 
-to start with. TODO write some more about this, make a gemfile.
+to generate new backgrounds for the graphs.
 
 ## LICENSE ###
 
