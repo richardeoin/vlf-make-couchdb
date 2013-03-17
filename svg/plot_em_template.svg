@@ -10,6 +10,17 @@
 }
 ]]></style>
   </defs>
+  <script type="text/javascript"><![CDATA[function on_mouse_move(event) {
+	if (event.clientX > 100 && event.clientX < 935) {
+		document.getElementById("cursor_line").setAttribute("display","inherit");
+		document.getElementById("cursor_line").setAttribute("transform", "translate(" + event.clientX + ", 0)");
+	} else {
+		document.getElementById("cursor_line").setAttribute("display","none");
+	}
+}
+function null_handler(event) {}
+]]></script>
+  <path id="cursor_line" d="M0,25l0,285" stroke="#cb4b16" stroke-width="1.5" display="none"/>
   <g style="color:grey" stroke="currentColor" transform="translate(0,25)">
     <path d="m100.0 0v285"/>
     <path d="m134.8 0v285"/>
