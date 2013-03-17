@@ -81,5 +81,34 @@ exports = module.exports = function() {
 				}
 			}
 		}
+		rx_power: {
+			map: function (doc) {
+				/* If this is a record for the recieved signal strength indicator (rssi) */
+				if (doc.rssi && doc.time) {
+					/* If the time is still in hex format from a direct upload */
+					var time;
+					if (typeof doc.time === 'string') {
+						/*
+						 * Parse the time to a number. Note the loss of precision in representing 64 bit time
+						 * in javascript. Will become a problem around the year 300 million.
+						 */
+						time = parseInt(doc.time, 16);
+					} else {
+						time = doc.time;
+					}
+					/* If everything is as we expect */
+					if (typeof time === 'number' && doc.rssi.value && typeof doc.rssi.value === 'number') {
+						/* Compensate for the averaging */
+						var rssi = doc.rssi.value/10;
+						/**
+						 * Determine the receiver input power. See §6.5.3 of the AT86RF212 datasheet.
+						 */
+						var rx_power = -98 + (1.03*rssi);
+						/* Output to 2 decimal places */
+						emit(time, Math.round(rx_power*100)/100);
+					}
+				}
+			}
+		}
 	};
 }();
