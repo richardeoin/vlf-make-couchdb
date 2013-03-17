@@ -80,7 +80,7 @@ exports = module.exports = function() {
 					}
 				}
 			}
-		}
+		},
 		rx_power: {
 			map: function (doc) {
 				/* If this is a record for the recieved signal strength indicator (rssi) */
