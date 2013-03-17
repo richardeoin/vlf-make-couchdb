@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 960 380" width="960" height="380" onmousemove="on_mouse_move(event)" style="font-family: 'Exo'">
+  <defs>
+    <style type="text/css"><![CDATA[@font-face {
+	font-family: 'Exo';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Exo Regular'), local('Exo-Regular'), url(http://themes.googleusercontent.com/static/fonts/exo/v1/wocyXRLWPo2Av-yUTmmbTA.woff) format('woff');
+}
+]]></style>
+  </defs>
+  <script type="text/javascript"><![CDATA[function on_mouse_move(event) {
+	if (event.clientX > 100 && event.clientX < 935) {
+		document.getElementById("cursor_line").setAttribute("display","inherit");
+		document.getElementById("cursor_line").setAttribute("transform", "translate(" + event.clientX + ", 0)");
+	} else {
+		document.getElementById("cursor_line").setAttribute("display","none");
+	}
+}
+function null_handler(event) {}
+]]></script>
+  <path id="cursor_line" d="M0,25l0,285" stroke="#cb4b16" stroke-width="1.5" display="none"/>
+  <g style="color:grey" stroke="currentColor" transform="translate(0,25)">
+    <path d="m100.0 0v285"/>
+    <path d="m134.8 0v285"/>
+    <path d="m169.6 0v285"/>
+    <path d="m204.4 0v285"/>
+    <path d="m239.2 0v285"/>
+    <path d="m274.0 0v285"/>
+    <path d="m308.8 0v285"/>
+    <path d="m343.5 0v285"/>
+    <path d="m378.3 0v285"/>
+    <path d="m413.1 0v285"/>
+    <path d="m447.9 0v285"/>
+    <path d="m482.7 0v285"/>
+    <path d="m517.5 0v285"/>
+    <path d="m552.3 0v285"/>
+    <path d="m587.1 0v285"/>
+    <path d="m621.9 0v285"/>
+    <path d="m656.7 0v285"/>
+    <path d="m691.5 0v285"/>
+    <path d="m726.3 0v285"/>
+    <path d="m761.0 0v285"/>
+    <path d="m795.8 0v285"/>
+    <path d="m830.6 0v285"/>
+    <path d="m865.4 0v285"/>
+    <path d="m900.2 0v285"/>
+    <path d="m935.0 0v285"/>
+  </g>
+  <g style="color:black" stroke="currentColor" transform="translate(0,25)">
+    <path d="m100.0 0v10m0 265v10"/>
+    <path d="m134.8 0v5m0 275v5"/>
+    <path d="m169.6 0v10m0 265v10"/>
+    <path d="m204.4 0v5m0 275v5"/>
+    <path d="m239.2 0v10m0 265v10"/>
+    <path d="m274.0 0v5m0 275v5"/>
+    <path d="m308.8 0v10m0 265v10"/>
+    <path d="m343.5 0v5m0 275v5"/>
+    <path d="m378.3 0v10m0 265v10"/>
+    <path d="m413.1 0v5m0 275v5"/>
+    <path d="m447.9 0v10m0 265v10"/>
+    <path d="m482.7 0v5m0 275v5"/>
+    <path d="m517.5 0v10m0 265v10"/>
+    <path d="m552.3 0v5m0 275v5"/>
+    <path d="m587.1 0v10m0 265v10"/>
+    <path d="m621.9 0v5m0 275v5"/>
+    <path d="m656.7 0v10m0 265v10"/>
+    <path d="m691.5 0v5m0 275v5"/>
+    <path d="m726.3 0v10m0 265v10"/>
+    <path d="m761.0 0v5m0 275v5"/>
+    <path d="m795.8 0v10m0 265v10"/>
+    <path d="m830.6 0v5m0 275v5"/>
+    <path d="m865.4 0v10m0 265v10"/>
+    <path d="m900.2 0v5m0 275v5"/>
+    <path d="m935.0 0v10m0 265v10"/>
+  </g>
+  <g style="text-anchor:middle" stroke="none" transform="translate(0,334)" font-size="12pt" fill="#000">
+    <g transform="translate(100.0)">
+      <text>00:00</text>
+    </g>
+    <g transform="translate(169.6)">
+      <text>02:00</text>
+    </g>
+    <g transform="translate(239.2)">
+      <text>04:00</text>
+    </g>
+    <g transform="translate(308.8)">
+      <text>06:00</text>
+    </g>
+    <g transform="translate(378.3)">
+      <text>08:00</text>
+    </g>
+    <g transform="translate(447.9)">
+      <text>10:00</text>
+    </g>
+    <g transform="translate(517.5)">
+      <text>12:00</text>
+    </g>
+    <g transform="translate(587.1)">
+      <text>14:00</text>
+    </g>
+    <g transform="translate(656.7)">
+      <text>16:00</text>
+    </g>
+    <g transform="translate(726.3)">
+      <text>18:00</text>
+    </g>
+    <g transform="translate(795.8)">
+      <text>20:00</text>
+    </g>
+    <g transform="translate(865.4)">
+      <text>22:00</text>
+    </g>
+    <g transform="translate(935.0)">
+      <text>00:00</text>
+    </g>
+  </g>
+  <g style="text-anchor: middle" transform="translate(517 367)" font-size="14pt" fill="#000">
+    <text>Time</text>
+  </g>
+  <g style="color:grey" stroke="currentColor" transform="translate(100,0)">
+    <path d="m0 310.0h835"/>
+    <path d="m0 262.5h835"/>
+    <path d="m0 215.0h835"/>
+    <path d="m0 167.5h835"/>
+    <path d="m0 120.0h835"/>
+    <path d="m0 72.5h835"/>
+    <path d="m0 25.0h835"/>
+  </g>
+  <g style="color:black" stroke="currentColor" transform="translate(100,0)">
+    <path d="m0 310.0h10m815 0h10"/>
+    <path d="m0 298.1h5m825 0h5"/>
+    <path d="m0 286.3h5m825 0h5"/>
+    <path d="m0 274.4h5m825 0h5"/>
+    <path d="m0 262.5h10m815 0h10"/>
+    <path d="m0 250.6h5m825 0h5"/>
+    <path d="m0 238.8h5m825 0h5"/>
+    <path d="m0 226.9h5m825 0h5"/>
+    <path d="m0 215.0h10m815 0h10"/>
+    <path d="m0 203.1h5m825 0h5"/>
+    <path d="m0 191.3h5m825 0h5"/>
+    <path d="m0 179.4h5m825 0h5"/>
+    <path d="m0 167.5h10m815 0h10"/>
+    <path d="m0 155.6h5m825 0h5"/>
+    <path d="m0 143.8h5m825 0h5"/>
+    <path d="m0 131.9h5m825 0h5"/>
+    <path d="m0 120.0h10m815 0h10"/>
+    <path d="m0 108.1h5m825 0h5"/>
+    <path d="m0 96.3h5m825 0h5"/>
+    <path d="m0 84.4h5m825 0h5"/>
+    <path d="m0 72.5h10m815 0h10"/>
+    <path d="m0 60.6h5m825 0h5"/>
+    <path d="m0 48.8h5m825 0h5"/>
+    <path d="m0 36.9h5m825 0h5"/>
+    <path d="m0 25.0h10m815 0h10"/>
+  </g>
+  <g style="text-anchor:end" stroke="none" transform="translate(94,0)" font-size="12pt" fill="#000">
+    <g transform="translate(0,316.0)">
+      <text>-100.0</text>
+    </g>
+    <g transform="translate(0,268.5)">
+      <text>-85.0</text>
+    </g>
+    <g transform="translate(0,221.0)">
+      <text>-70.0</text>
+    </g>
+    <g transform="translate(0,173.5)">
+      <text>-55.0</text>
+    </g>
+    <g transform="translate(0,126.0)">
+      <text>-40.0</text>
+    </g>
+    <g transform="translate(0,78.5)">
+      <text>-25.0</text>
+    </g>
+    <g transform="translate(0,31.0)">
+      <text>-10.0</text>
+    </g>
+  </g>
+  <g style="text-anchor:middle" transform="translate(25 167) rotate(-90)" font-size="14pt" fill="#000">
+    <text>Received Power (dBm)</text>
+  </g>
+  <g stroke="#333" fill="none">
+    <path d="m100 25v285h835v-285h-835z"/>
+  </g>
+  <g transform="translate(100,310) scale(1, -1)">
+    <a xlink:title="Plot #1">
+      <g stroke-width="1.4" stroke-linejoin="bevel" fill="none">
+        <path stroke="#dc322f" d="[SPLIT]"/>
+      </g>
+    </a>
+  </g>
+  <g style="text-anchor:middle" stroke="#dc322f" transform="translate(517,167)" font-size="30pt" display="[SPLIT]" fill="#dc322f">
+    <text>No Data Found</text>
+  </g>
+  <rect x="0" y="0" width="960" height="380" fill="white" fill-opacity="0" stroke="none" stroke-width="0" onclick="null_handler"/>
+</svg>
