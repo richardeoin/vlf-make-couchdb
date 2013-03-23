@@ -121,49 +121,33 @@ function null_handler(event) {}
   </g>
   <g style="color:grey" stroke="currentColor" transform="translate(100,0)">
     <path d="m0 310.0h835"/>
-    <path d="m0 253.0h835"/>
-    <path d="m0 196.0h835"/>
-    <path d="m0 139.0h835"/>
-    <path d="m0 82.0h835"/>
+    <path d="m0 215.0h835"/>
+    <path d="m0 120.0h835"/>
     <path d="m0 25.0h835"/>
   </g>
   <g style="color:black" stroke="currentColor" transform="translate(100,0)">
     <path d="m0 310.0h10m815 0h10"/>
-    <path d="m0 287.3h5m825 0h5"/>
-    <path d="m0 270.2h5m825 0h5"/>
-    <path d="m0 260.1h5m825 0h5"/>
-    <path d="m0 253.0h10m815 0h10"/>
-    <path d="m0 230.3h5m825 0h5"/>
-    <path d="m0 213.2h5m825 0h5"/>
-    <path d="m0 203.1h5m825 0h5"/>
-    <path d="m0 196.0h10m815 0h10"/>
-    <path d="m0 173.3h5m825 0h5"/>
-    <path d="m0 156.2h5m825 0h5"/>
-    <path d="m0 146.1h5m825 0h5"/>
-    <path d="m0 139.0h10m815 0h10"/>
-    <path d="m0 116.3h5m825 0h5"/>
-    <path d="m0 99.2h5m825 0h5"/>
-    <path d="m0 89.1h5m825 0h5"/>
-    <path d="m0 82.0h10m815 0h10"/>
-    <path d="m0 59.3h5m825 0h5"/>
-    <path d="m0 42.2h5m825 0h5"/>
-    <path d="m0 32.1h5m825 0h5"/>
+    <path d="m0 272.2h5m825 0h5"/>
+    <path d="m0 243.6h5m825 0h5"/>
+    <path d="m0 226.9h5m825 0h5"/>
+    <path d="m0 215.0h10m815 0h10"/>
+    <path d="m0 177.2h5m825 0h5"/>
+    <path d="m0 148.6h5m825 0h5"/>
+    <path d="m0 131.9h5m825 0h5"/>
+    <path d="m0 120.0h10m815 0h10"/>
+    <path d="m0 82.2h5m825 0h5"/>
+    <path d="m0 53.6h5m825 0h5"/>
+    <path d="m0 36.9h5m825 0h5"/>
     <path d="m0 25.0h10m815 0h10"/>
   </g>
   <g style="text-anchor:end" stroke="none" transform="translate(94,0)" font-size="12pt" fill="#000">
     <g transform="translate(0,316.0)">
-      <text>1000</text>
-    </g>
-    <g transform="translate(0,259.0)">
-      <text>10000</text>
-    </g>
-    <g transform="translate(0,202.0)">
       <text>1e+05</text>
     </g>
-    <g transform="translate(0,145.0)">
+    <g transform="translate(0,221.0)">
       <text>1e+06</text>
     </g>
-    <g transform="translate(0,88.0)">
+    <g transform="translate(0,126.0)">
       <text>1e+07</text>
     </g>
     <g transform="translate(0,31.0)">
