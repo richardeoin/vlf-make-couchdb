@@ -15,7 +15,7 @@ exports = module.exports = function() {
 	var em_get_coords = function(row, req, px_per_second) {
 		return {
 			x: (row.key-req.query.startkey) * px_per_second,
-			y: ((Math.log(row.value) / Math.log(10))-3) * 57
+			y: ((Math.log(row.value) / Math.log(10))-5) * 95
 		};
 	}
 	/**
