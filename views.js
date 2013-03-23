@@ -99,7 +99,7 @@ exports = module.exports = function() {
 					/* If everything is as we expect */
 					if (typeof time === 'number' && doc.rssi.value && typeof doc.rssi.value === 'number') {
 						/* Compensate for the averaging */
-						var rssi = doc.rssi.value/10;
+						var rssi = doc.rssi.value/1;
 						/**
 						 * Determine the receiver input power. See §6.5.3 of the AT86RF212 datasheet.
 						 */
