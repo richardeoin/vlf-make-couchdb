@@ -20,6 +20,15 @@ exports = module.exports = function() {
 		};
 	}
 	/**
+	 * A function for converting envelope measurement value into graph coordinates.
+	 */
+	var envelope_get_coords = function(row, req, px_per_second) {
+		return {
+			x: (row.key-req.query.startkey) * px_per_second,
+			y: (row.value / 1000) * 8.14
+		};
+	}
+	/**
  	* A function for converting battery voltage values into graph coordinates.
  	*/
 	var battery_get_coords = function(row, req, px_per_second) {
@@ -178,6 +187,8 @@ exports = module.exports = function() {
 	return {
 		plot_em: get_plot_function('svg/plot_em_template.svg', em_get_coords),
 		plot_em_today: get_today_function('plot_em'),
+		plot_envelope: get_plot_function('svg/plot_envelope_template.svg', envelope_get_coords),
+		plot_envelope_today: get_today_function('plot_envelope'),
 		plot_battery: get_plot_function('svg/plot_battery_template.svg', battery_get_coords),
 		plot_battery_today: get_today_function('plot_battery'),
 		plot_rx_power: get_plot_function('svg/plot_rx_power_template.svg', rx_power_get_coords),
