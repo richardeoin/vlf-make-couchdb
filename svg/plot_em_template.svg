@@ -121,37 +121,45 @@ function null_handler(event) {}
   </g>
   <g style="color:grey" stroke="currentColor" transform="translate(100,0)">
     <path d="m0 310.0h835"/>
-    <path d="m0 215.0h835"/>
-    <path d="m0 120.0h835"/>
+    <path d="m0 238.8h835"/>
+    <path d="m0 167.5h835"/>
+    <path d="m0 96.3h835"/>
     <path d="m0 25.0h835"/>
   </g>
   <g style="color:black" stroke="currentColor" transform="translate(100,0)">
     <path d="m0 310.0h10m815 0h10"/>
-    <path d="m0 272.2h5m825 0h5"/>
-    <path d="m0 243.6h5m825 0h5"/>
-    <path d="m0 226.9h5m825 0h5"/>
-    <path d="m0 215.0h10m815 0h10"/>
-    <path d="m0 177.2h5m825 0h5"/>
-    <path d="m0 148.6h5m825 0h5"/>
+    <path d="m0 292.2h5m825 0h5"/>
+    <path d="m0 274.4h5m825 0h5"/>
+    <path d="m0 256.6h5m825 0h5"/>
+    <path d="m0 238.8h10m815 0h10"/>
+    <path d="m0 220.9h5m825 0h5"/>
+    <path d="m0 203.1h5m825 0h5"/>
+    <path d="m0 185.3h5m825 0h5"/>
+    <path d="m0 167.5h10m815 0h10"/>
+    <path d="m0 149.7h5m825 0h5"/>
     <path d="m0 131.9h5m825 0h5"/>
-    <path d="m0 120.0h10m815 0h10"/>
-    <path d="m0 82.2h5m825 0h5"/>
-    <path d="m0 53.6h5m825 0h5"/>
-    <path d="m0 36.9h5m825 0h5"/>
+    <path d="m0 114.1h5m825 0h5"/>
+    <path d="m0 96.3h10m815 0h10"/>
+    <path d="m0 78.4h5m825 0h5"/>
+    <path d="m0 60.6h5m825 0h5"/>
+    <path d="m0 42.8h5m825 0h5"/>
     <path d="m0 25.0h10m815 0h10"/>
   </g>
   <g style="text-anchor:end" stroke="none" transform="translate(94,0)" font-size="12pt" fill="#000">
     <g transform="translate(0,316.0)">
-      <text>1e+05</text>
+      <text>0.0</text>
     </g>
-    <g transform="translate(0,221.0)">
-      <text>1e+06</text>
+    <g transform="translate(0,244.8)">
+      <text>100.0</text>
     </g>
-    <g transform="translate(0,126.0)">
-      <text>1e+07</text>
+    <g transform="translate(0,173.5)">
+      <text>200.0</text>
+    </g>
+    <g transform="translate(0,102.3)">
+      <text>300.0</text>
     </g>
     <g transform="translate(0,31.0)">
-      <text>1e+08</text>
+      <text>400.0</text>
     </g>
   </g>
   <g style="text-anchor:middle" transform="translate(25 167) rotate(-90)" font-size="14pt" fill="#000">
