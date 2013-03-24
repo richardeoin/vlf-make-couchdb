@@ -52,6 +52,52 @@ exports = module.exports = function() {
 				}
 			}
 		},
+		left_envelope: {
+			map: function (doc) {
+				/* If this is a record for the left envelope */
+				if (doc.left_envelope && doc.time) {
+					/* If the time is still in hex format from a direct upload */
+					var time;
+					if (typeof doc.time === 'string') {
+						/*
+						 * Parse the time to a number. Note the loss of precision in representing 64 bit time
+						 * in javascript. Will become a problem around the year 300 million.
+						 */
+						time = parseInt(doc.time, 16);
+					}
+					else {
+						time = doc.time;
+					}
+					/* If everything is as we expect */
+					if (typeof time === 'number' && doc.left_envelope.value && typeof doc.left_envelope.value === 'number') {
+						emit(time, doc.left_envelope.value);
+					}
+				}
+			}
+		},
+		right_envelope: {
+			map: function (doc) {
+				/* If this is a record for the right envelope */
+				if (doc.right_envelope && doc.time) {
+					/* If the time is still in hex format from a direct upload */
+					var time;
+					if (typeof doc.time === 'string') {
+						/*
+						 * Parse the time to a number. Note the loss of precision in representing 64 bit time
+						 * in javascript. Will become a problem around the year 300 million.
+						 */
+						time = parseInt(doc.time, 16);
+					}
+					else {
+						time = doc.time;
+					}
+					/* If everything is as we expect */
+					if (typeof time === 'number' && doc.right_envelope.value && typeof doc.right_envelope.value === 'number') {
+						emit(time, doc.right_envelope.value);
+					}
+				}
+			}
+		},
 		battery: {
 			map: function (doc) {
 				/* If this is a record for the battery */
