@@ -6,7 +6,7 @@
 
 var request = require('request');
 var argv = require('optimist')
-	.usage('Usage: $0, --database [database] --ddoc [design document] --host [fqhn || localhost] --port [port || 5984]')
+	.usage('Usage: $0, --database [database] --ddoc [design document] --host [fqhn || localhost] --port [port || 5984] --username [username] --password [password]')
 	.demand(['database', 'ddoc'])
 	.argv;
 
@@ -28,9 +28,14 @@ var simple_stringify = function (view) {
 /**
  * Puts a design document of a given name in our CouchDB.
  */
-function put_design_document(uri, body) {
+function put_design_document(uri, username, password, body) {
 	var options = {
 		uri: uri,
+		auth: {
+			user: username,
+			pass: password,
+			sendImmediately: false
+		},
 		headers: {
 			"Content-Type": "application/json"
 		},
@@ -39,7 +44,12 @@ function put_design_document(uri, body) {
 
 	/* Attempt to get the revision */
 	request.head({
-		uri: options.uri
+		uri: options.uri,
+		auth: {
+			user: username,
+			pass: password,
+			sendImmediately: false
+		}
 	},
 	function (err, res) {
 		if (res && res.headers && typeof(res.headers.etag) === 'string') {
@@ -50,7 +60,11 @@ function put_design_document(uri, body) {
 		options.body = simple_stringify(options.body);
 		/* And put the request */
 		request.put(options, function (err, res) {
-			console.log(res.statusCode);
+			if (err) {
+				console.log(err);
+			} else {
+				console.log(res.statusCode);
+			}
 		});
 	});
 }
@@ -62,7 +76,8 @@ argv.port = argv.port || 5984;
 /*
  * Put our design documents in the database.
  */
-put_design_document(['http://', argv.host, ':', argv.port, '/', argv.database, '/_design/', argv.ddoc].join(''), {
+put_design_document(['http://', argv.host, ':', argv.port, '/', argv.database, '/_design/', argv.ddoc].join(''),
+	argv.username, argv.password, {
 	/* View Functions */
 	views: require('./views.js'),
 	/* List Functions */
