@@ -41,8 +41,7 @@ exports = module.exports = function() {
 						 * in javascript. Will become a problem around the year 300 million.
 						 */
 						time = parseInt(doc.time, 16);
-					}
-					else {
+					} else {
 						time = doc.time;
 					}
 					/* If everything is as we expect */
@@ -64,8 +63,7 @@ exports = module.exports = function() {
 						 * in javascript. Will become a problem around the year 300 million.
 						 */
 						time = parseInt(doc.time, 16);
-					}
-					else {
+					} else {
 						time = doc.time;
 					}
 					/* If everything is as we expect */
@@ -87,8 +85,7 @@ exports = module.exports = function() {
 						 * in javascript. Will become a problem around the year 300 million.
 						 */
 						time = parseInt(doc.time, 16);
-					}
-					else {
+					} else {
 						time = doc.time;
 					}
 					/* If everything is as we expect */
