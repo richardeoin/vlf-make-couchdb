@@ -157,25 +157,25 @@ function null_handler(event) {}
   </g>
   <g style="text-anchor:end" stroke="none" transform="translate(94,0)" font-size="12pt" fill="#000">
     <g transform="translate(0,316.0)">
-      <text>-100.0</text>
+      <text>-100</text>
     </g>
     <g transform="translate(0,268.5)">
-      <text>-85.0</text>
+      <text>-85</text>
     </g>
     <g transform="translate(0,221.0)">
-      <text>-70.0</text>
+      <text>-70</text>
     </g>
     <g transform="translate(0,173.5)">
-      <text>-55.0</text>
+      <text>-55</text>
     </g>
     <g transform="translate(0,126.0)">
-      <text>-40.0</text>
+      <text>-40</text>
     </g>
     <g transform="translate(0,78.5)">
-      <text>-25.0</text>
+      <text>-25</text>
     </g>
     <g transform="translate(0,31.0)">
-      <text>-10.0</text>
+      <text>-10</text>
     </g>
   </g>
   <g style="text-anchor:middle" transform="translate(25 167) rotate(-90)" font-size="14pt" fill="#000">

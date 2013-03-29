@@ -162,28 +162,28 @@ function null_handler(event) {}
   </g>
   <g style="text-anchor:end" stroke="none" transform="translate(94,0)" font-size="12pt" fill="#000">
     <g transform="translate(0,316.0)">
-      <text>0.0</text>
+      <text>0</text>
     </g>
     <g transform="translate(0,275.3)">
-      <text>5.0</text>
+      <text>5</text>
     </g>
     <g transform="translate(0,234.6)">
-      <text>10.0</text>
+      <text>10</text>
     </g>
     <g transform="translate(0,193.9)">
-      <text>15.0</text>
+      <text>15</text>
     </g>
     <g transform="translate(0,153.1)">
-      <text>20.0</text>
+      <text>20</text>
     </g>
     <g transform="translate(0,112.4)">
-      <text>25.0</text>
+      <text>25</text>
     </g>
     <g transform="translate(0,71.7)">
-      <text>30.0</text>
+      <text>30</text>
     </g>
     <g transform="translate(0,31.0)">
-      <text>35.0</text>
+      <text>35</text>
     </g>
   </g>
   <g style="text-anchor:middle" transform="translate(25 167) rotate(-90)" font-size="14pt" fill="#000">

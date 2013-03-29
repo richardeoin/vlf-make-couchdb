@@ -23,8 +23,7 @@ These are generated using [svg-plot-gen](https://github.com/richardeoin/svg-plot
 Then you can `cd svg/` and run
 
 ```
-./make_em_template.sh
-./make_battery_template.sh
+make
 ```
 
 to generate new backgrounds for the graphs.
