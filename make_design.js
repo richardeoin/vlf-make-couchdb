@@ -31,27 +31,26 @@ var simple_stringify = function (view) {
 function put_design_document(uri, username, password, body) {
 	var options = {
 		uri: uri,
-		auth: {
-			user: username,
-			pass: password,
-			sendImmediately: false
-		},
 		headers: {
 			"Content-Type": "application/json"
-		},
-		body: body
+		}
 	};
 
-	/* Attempt to get the revision */
-	request.head({
-		uri: options.uri,
-		auth: {
+	/* If we've been given a username */
+	if (username) {
+		/* Default password if not given a parameter */
+		password = password || " ";
+		options.auth = {
 			user: username,
 			pass: password,
 			sendImmediately: false
-		}
-	},
-	function (err, res) {
+		};
+	}
+
+	/* Attempt to get the revision */
+	request.head(options, function (err, res) {
+		/* If we can */
+		options.body = body;
 		if (res && res.headers && typeof(res.headers.etag) === 'string') {
 			/* Add the revision to the body if it's returned */
 			options.body._rev = res.headers.etag.slice(1,-1);
