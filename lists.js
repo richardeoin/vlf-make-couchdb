@@ -174,6 +174,9 @@ exports = module.exports = function() {
 	"Location": path
       }
     });
+
+    /* Fix for Couchdb 1.3.0 */
+    send('');
   }
   /**
    * Returns a complete today function as a string.
